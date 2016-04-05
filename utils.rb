@@ -26,7 +26,7 @@ class Utils
 		(st.start_time < st.min_end_time) && 
 		(st.start_time < st.max_end_time) &&
 		(st.min_end_time <= st.max_end_time) &&
-		(st.minutes_remaining == 0.0) && 
+		#(st.minutes_remaining == 0.0) && 
 		(session.talks.is_a?(Array))
 	end
 

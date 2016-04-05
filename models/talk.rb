@@ -2,9 +2,9 @@ class Talk
 	attr_reader 	:title, :duration
 	attr_accessor	:start_time
 		
-	def initialize(talk)
-		@title = title_of(talk)
-		@duration = duration_of(talk)
+	def initialize(talk_string)
+		@title 			= title_of(talk_string)
+		@duration 	= duration_of(talk_string)
 		@start_time = ""
 	end
 

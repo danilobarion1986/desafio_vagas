@@ -24,6 +24,10 @@ class Session
 		end
 	end
 
+	def duration
+		return @talks.map(&:duration).inject(:+)
+	end
+
 	def info
 		puts "-" * 20
 		puts "'#{name}' info: "

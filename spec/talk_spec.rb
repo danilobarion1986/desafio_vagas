@@ -3,10 +3,10 @@ require_relative './spec_helper.rb'
 describe Talk do
 	
 	before :all do
-		@title = "Title of talk lightning"
+		@title 			= "Title of talk lightning"
 		@long_title = "Long title 45min"
-		@talk = Talk.new @title
-		@long_talk = Talk.new @long_title 
+		@talk 			= Talk.new @title
+		@long_talk 	= Talk.new @long_title 
 	end
 
 	describe "#new" do

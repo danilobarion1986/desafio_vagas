@@ -1,27 +1,49 @@
 class Track
-	attr_accessor :schedule, :name
+	attr_accessor :schedule, :sessions, :brakes, :time, :name
 
-	def initialize(name = "Track")
+	def initialize(time, name = "Track")
 		@schedule = Array.new
-		@name = name
+		@sessions = Array.new
+		@brakes 	=	Array.new
+		@time 		= time
+		@name 		= name
 	end
 
 	def add_session(session)
+		@time.minutes_remaining = @time.minutes_remaining - session.duration
+		#@time.start_time = @time.actual_time
+		@time.update_actual_time(session.duration)
+		@sessions << session
 		@schedule << session
 	end
 
 	def add_brake(brake)  
+		@time.minutes_remaining = @time.minutes_remaining - brake.duration
+		brake.start_time = @time.actual_time unless brake.locked_start_time
+		@time.update_actual_time(brake.duration)
+		@brakes << brake
 		@schedule << brake
 	end
 
+	def sessions
+		@sessions.each do |s|
+			puts s
+		end
+	end
+
+	def brakes
+		@brakes.each do |b|
+			puts b
+		end
+	end
+
 	def schedule
-		#exibir as sessões e intervalos existentes
-		@schedule.each do |sessions|
-			sessions.each do |s|
-				if s.is_a?(Session)
-					puts s.talks
-				elsif s.is_a?(Brake)
-					puts s
+		puts "#{name}"
+		@schedule.each do |obj|
+			if obj.is_a?(Session)
+				obj.talks
+			elsif obj.is_a?(Brake)
+			 	obj.brake
 			end
 		end
 	end
@@ -30,8 +52,8 @@ class Track
 		puts "-" * 20
 		puts "'#{name}' info: "
 		puts "-" * 20
-		puts "Session count: #{@schedule.size}"
-		puts "Brake count: #{@schedule.size}"
+		puts "Session count: #{@sessions.size}"
+		puts "Brake count: #{@sessions.size}"
 		puts "Is valid?: #{Utils.new.is_track_valid?(self)}"
 		puts ""
 		puts ""
