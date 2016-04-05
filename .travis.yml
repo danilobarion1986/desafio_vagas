@@ -3,4 +3,6 @@ rvm:
   - 2.3
   - jruby
   - rbx-2
+before_install:
+  - gem install rspec
 script: bundle exec rspec spec
