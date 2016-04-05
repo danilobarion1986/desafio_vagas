@@ -1,2 +1,3 @@
-# desafio_vagas
-My resolution for challenge nº2, from Vagas.com.br
+# Vagas.com.br Challenge
+
+My resolution for challenge nº2
