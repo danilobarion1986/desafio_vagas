@@ -1,4 +1,3 @@
-# Vagas.com.br Challenge 
-![Build-Status] (https://travis-ci.org/danilobarion1986/desafio_vagas.svg?branch=master)
+# Vagas.com.br Challenge ![Build-Status] (https://travis-ci.org/danilobarion1986/desafio_vagas.svg?branch=master)
 
 My resolution for challenge nº2
