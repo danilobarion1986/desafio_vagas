@@ -1,8 +1,6 @@
 language: ruby
 rvm:
   - 2.1.0
-  - jruby
-  - rbx-2
 gemfile:
   - Gemfile
 before_install:
