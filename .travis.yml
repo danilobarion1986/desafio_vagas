@@ -6,6 +6,9 @@ gemfile:
 before_install:
   - gem update --system
   - gem install rspec
+addons:
+  code_climate:
+    repo_token: 6ba1d703
 script:
   - bundle exec rspec
   - ruby main.rb input.txt
