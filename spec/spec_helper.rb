@@ -1,5 +1,8 @@
 require_relative '../models/talk.rb'
 require 'yaml'
+require 'coveralls'
+
+Coveralls.wear!
 
 RSpec.configure do |config|
   config.color = true
