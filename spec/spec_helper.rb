@@ -1,4 +1,13 @@
 require "codeclimate-test-reporter"
+require "simplecov"
+
+SimpleCov.start do
+  formatter SimpleCov::Formatter::MultiFormatter.new([
+    SimpleCov::Formatter::HTMLFormatter,
+    CodeClimate::TestReporter::Formatter
+  ])
+end
+
 CodeClimate::TestReporter.start
 
 require 'yaml'
