@@ -1,10 +1,8 @@
-require_relative '../models/talk.rb'
-require 'yaml'
-# require 'coveralls'
 require "codeclimate-test-reporter"
-
 CodeClimate::TestReporter.start
-# Coveralls.wear!
+
+require 'yaml'
+require_relative '../models/talk.rb'
 
 RSpec.configure do |config|
   config.color = true
