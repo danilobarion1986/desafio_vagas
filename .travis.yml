@@ -7,5 +7,5 @@ before_install:
   - gem update --system
   - gem install rspec
 script:
-  - bundle exec coveralls push
+  - bundle exec rspec
   - ruby main.rb input.txt
